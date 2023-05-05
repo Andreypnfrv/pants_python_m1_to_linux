@@ -1,0 +1,1 @@
+This is example of pants repository, that was built on Mac with M1 (arm) and was succesfully deployed to Linux environment on ECS

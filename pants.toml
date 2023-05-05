@@ -1,0 +1,33 @@
+[GLOBAL]
+pants_version = "2.15.0"
+
+backend_packages = [
+  "pants.backend.shell",
+  "pants.backend.python",
+  "pants.backend.awslambda.python",
+  "pants.backend.docker"
+]
+
+[python]
+interpreter_constraints = ["CPython>=3.11"]
+
+[anonymous-telemetry]
+enabled = false
+
+[docker]
+build_args = [
+  "DOCKER_DEFAULT_PLATFORM=linux/amd64"
+]
+
+[environments-preview.names]
+linux_docker = "//:linux_docker"
+
+
+[pex-cli]
+version = "v2.1.128"
+known_versions = [
+    "v2.1.128|macos_arm64|a48a461a9e9f490476aa75976dbe58d3263691a8895a53d11fdaaf8a3bc223a5|4081603",
+    "v2.1.128|macos_x86_64|a48a461a9e9f490476aa75976dbe58d3263691a8895a53d11fdaaf8a3bc223a5|4081603",
+    "v2.1.128|linux_x86_64|a48a461a9e9f490476aa75976dbe58d3263691a8895a53d11fdaaf8a3bc223a5|4081603",
+    "v2.1.128|linux_arm64|a48a461a9e9f490476aa75976dbe58d3263691a8895a53d11fdaaf8a3bc223a5|4081603"
+]
